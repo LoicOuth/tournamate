@@ -1,0 +1,215 @@
+{
+  "home": {
+    "title": "Home",
+    "hero": {
+      "title": "TournaMate",
+      "subtitle": "The ultimate app to organize and manage your sports tournaments,",
+      "subtitle_highlight": "for any sport",
+      "cta_primary": "Create my tournament",
+      "cta_secondary": "Discover features"
+    },
+    "sports": {
+      "title": "All sports, one platform",
+      "football": "Football",
+      "chess": "Chess",
+      "petanque": "Petanque",
+      "esport": "Esport",
+      "tennis": "Tennis",
+      "basketball": "Basketball"
+    },
+    "features": {
+      "title": "Why choose TournaMate?",
+      "subtitle": "A complete solution to organize professional and amateur tournaments",
+      "creation": {
+        "title": "Simplified creation",
+        "description": "Create your tournaments in just a few clicks with our intuitive interface"
+      },
+      "multisports": {
+        "title": "Multi-sports",
+        "description": "Manage all types of sports and competitions on a single platform"
+      },
+      "realtime": {
+        "title": "Real-time tracking",
+        "description": "Follow results and rankings live"
+      },
+      "participants": {
+        "title": "Participant management",
+        "description": "Automated registrations, communications and notifications"
+      }
+    },
+    "stats": {
+      "tournaments": "Tournaments organized",
+      "participants": "Active participants",
+      "sports": "Supported sports"
+    },
+    "cta": {
+      "title": "Ready to organize your next tournament?",
+      "subtitle": "Join thousands of organizers who trust TournaMate to manage their sports competitions.",
+      "button": "Get started now"
+    }
+  },
+  "forgotPassword": {
+    "head": "Reset your password",
+    "title": "Reset your password",
+    "description": "Enter the email address associated with your account and we will email you instructions to reset your password.",
+    "email": "Email address",
+    "send": "Send instructions",
+    "sucessMessage": "Email with information has been sent!",
+    "errorAuthProvider": "This account is connected with an external service"
+  },
+  "login": {
+    "head": "Login",
+    "connectionErrorTitle": "Connection error",
+    "connectionErrorDescription": "Check your credentials",
+    "connectionWithGoogle": "Login with Google",
+    "email": "Email address",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign in",
+    "noAccount": "Don't have an account yet?",
+    "register": "Register",
+    "validateError": "You must validate your account before logging in",
+    "googleAccessDenied": "Access denied",
+    "googleRequestExpired": "The request has expired. Try again"
+  },
+  "register": {
+    "head": "Register",
+    "googleRegister": "Register with Google",
+    "name": "Name",
+    "email": "Email address",
+    "password": "Password",
+    "confirmedPassword": "Confirm password",
+    "create": "Create my account",
+    "alreadyHaveAccount": "Already have an account?",
+    "signIn": "Sign in",
+    "emailSent": "A validation email for your account has been sent."
+  },
+  "resetPassword": {
+    "head": "Create a new password",
+    "title": "Create a new password",
+    "description": "Your new password must be different from the previously used password.",
+    "password": "Password",
+    "confirmedPassword": "Confirm password",
+    "resetPassword": "Reset password",
+    "sessionExpiredError": "The session has expired, please try again"
+  },
+  "profileConnections": {
+    "head": "Connections",
+    "title": "Connections",
+    "description": "Here you will find connections with third-party services",
+    "dissociate": "Dissociate",
+    "cantDissociate": "You cannot dissociate this service because you are connected with it",
+    "noExternalConection": "No connection with a third-party service",
+    "connected": "Connect to a third-party service:"
+  },
+  "profileDetails": {
+    "head": "My information",
+    "title": "My information",
+    "description": "You can modify your information below (Name, Email address, avatar)",
+    "name": "Name",
+    "email": "Email address",
+    "update": "Update",
+    "cantEdit": "You cannot edit your information because you are connected with a third-party service"
+  },
+  "profileSecurity": {
+    "head": "Security",
+    "title": "Security",
+    "description": "You can change your password here",
+    "password": "Password",
+    "confirmedPassword": "Confirm password",
+    "update": "Update",
+    "cantEdit": "You cannot edit your information because you are connected with a third-party service"
+  },
+  "authLayout": {
+    "signIn": "Sign in",
+    "register": "Register",
+    "signInDescription": "Sign in with your Google account or email",
+    "registerDescription": "Enter your information to register on the platform"
+  },
+  "meLayout": {
+    "head": "My account",
+    "description": "Manage your account settings and set your email preferences.",
+    "validateAccount": "Your account was validated on:",
+    "details": "My information",
+    "security": "Security",
+    "connection": "Connections"
+  },
+  "publicLayout": {
+    "home": "Home",
+    "about": "About",
+    "signIn": "Sign in",
+    "navigation": "Navigation",
+    "informations": "Information",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "title": "TournaMate",
+    "createdBy": "Created by"
+  },
+  "notifications": {
+    "markAsRead": "Mark as read",
+    "delete": "Delete",
+    "noNotifications": "No notifications"
+  },
+  "userMenu": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "myAccount": "My account",
+    "logout": "Logout",
+    "logoutTitle": "Do you really want to log out?",
+    "logoutDescription": "Once logged out, you will no longer have access to the application",
+    "cancel": "Cancel"
+  },
+  "defaultBreadcrumb": {
+    "home": "Home",
+    "details": "Account settings"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "onboarding": {
+    "welcome_title": "Welcome to",
+    "welcome_description": "To get started, you'll need to either join an existing organization or create a new one.",
+    "organization_explanation": {
+      "title": "What is an Organization?",
+      "description": "An organization is your tournament management hub. It groups all your tournaments, teams, and participants in one place. You can manage multiple tournaments under one organization and collaborate with other administrators."
+    },
+    "join_card": {
+      "title": "Join Organization",
+      "subtitle": "Join an existing organization that you've been invited to",
+      "description": "Perfect if you've been invited by an administrator or need to join your team's organization.",
+      "button": "Join Existing Organization"
+    },
+    "create_card": {
+      "title": "Create Organization",
+      "subtitle": "Start fresh by creating your own organization",
+      "description": "Ideal if you're starting new or want to be the administrator of your own tournaments.",
+      "button": "Create New Organization"
+    },
+    "back_button": "Back",
+    "join_step": {
+      "title": "Join Organization",
+      "subtitle": "Enter the organization details provided by your administrator",
+      "how_to_join": {
+        "title": "How to Join",
+        "description": "Contact your organization administrator to get the organization identification code. This unique code will allow you to join their organization and access all tournaments and events they manage."
+      },
+      "organization_id_label": "Organization ID",
+      "organization_id_placeholder": "Enter organization identification code",
+      "organization_id_help": "Ask your administrator for this unique identification code",
+      "submit_button": "Join Organization"
+    },
+    "create_step": {
+      "title": "Create Organization",
+      "subtitle": "Set up your new tournament organization",
+      "how_to_create": {
+        "title": "How to Create",
+        "description": "Creating an organization makes you the administrator. You'll be able to create tournaments, invite other users, and manage all aspects of your competitive events. Choose a name that represents your group, team, or company."
+      },
+      "organization_name_label": "Organization Name",
+      "organization_name_placeholder": "Enter your organization name",
+      "organization_name_help": "This will be visible to all members and participants",
+      "submit_button": "Create Organization"
+    }
+  }
+}
