@@ -19,7 +19,8 @@ const inertiaConfig = defineConfig({
     authError: ({ session }) => !!session?.flashMessages.get('errorsBag.E_INVALID_CREDENTIALS'),
     toastError: ({ session }) => session.flashMessages.get(ToastErrorKey)?.message,
     toastSuccess: ({ session }) => session.flashMessages.get(ToastSucessKey)?.message,
-    user: async ({ auth }) => await auth.user?.projection(),
+    user: async ({ auth, request }) =>
+      await auth.user?.projection(request.param('organizationSlug')),
     theme: ({ session }) => session.get(ThemSessionKey, Theme.Dark),
   },
 

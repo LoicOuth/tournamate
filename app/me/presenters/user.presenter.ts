@@ -10,9 +10,10 @@ export class UserPresenter {
   declare validatedAt?: string
   declare isConnectedWithProvider: boolean
   declare organizations: OrganizationPresenter[]
-  declare firstOrganization?: OrganizationPresenter
+  declare lastOrganizationAccessed?: OrganizationPresenter
+  declare currentOrganization?: OrganizationPresenter
 
-  constructor(user: User) {
+  constructor(user: User, organizationSlug?: string) {
     this.id = user.id
     this.name = user.name
     this.email = user.email
@@ -20,11 +21,12 @@ export class UserPresenter {
     this.createdAt = user.createdAt.toString()
     this.validatedAt = user.validatedAt?.toString()
     this.organizations = user.organizations?.map((org) => new OrganizationPresenter(org)) || []
-    this.firstOrganization = this.organizations?.[0]
+    this.lastOrganizationAccessed = user.organizations[0]
+    this.currentOrganization = user.organizations.find((org) => org.slug === organizationSlug)
   }
 
-  static async build(user: User): Promise<UserPresenter> {
-    const presenter = new UserPresenter(user)
+  static async build(user: User, organizationSlug?: string): Promise<UserPresenter> {
+    const presenter = new UserPresenter(user, organizationSlug)
     presenter.isConnectedWithProvider = !!(await user.connectedAuthProvider())
 
     return presenter

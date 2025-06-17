@@ -68,7 +68,7 @@ const toFeatureSection = () => {
             <span class="text-primary font-semibold">{{ t('home.hero.subtitle_highlight') }}</span>
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="huge" @click="router.get(`/org/${user?.firstOrganization?.slug}`)">
+            <Button size="huge" @click="router.get(`/org/${user?.lastOrganizationAccessed?.slug}`)">
               {{ t('home.hero.cta_primary') }}
             </Button>
             <Button size="huge" variant="outline" @click="toFeatureSection()">
@@ -166,7 +166,7 @@ const toFeatureSection = () => {
         <Button
           size="huge"
           class="mb-4"
-          @click="router.get(`/org/${user?.firstOrganization?.slug}`)"
+          @click="router.get(`/org/${user?.lastOrganizationAccessed?.slug}`)"
         >
           {{ t('home.cta.button') }}
         </Button>

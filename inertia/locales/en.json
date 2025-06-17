@@ -211,5 +211,11 @@
       "organization_name_help": "This will be visible to all members and participants",
       "submit_button": "Create Organization"
     }
+  },
+  "appLayout": {
+    "dashboard": "Dashboard",
+    "tournaments": "Tournaments",
+    "createOrganization": "Create Organization",
+    "joinOrganization": "Join Organization"
   }
 }

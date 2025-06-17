@@ -50,7 +50,9 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @hasMany(() => AuthProvider)
   declare authProviders: HasMany<typeof AuthProvider>
 
-  @manyToMany(() => Organization)
+  @manyToMany(() => Organization, {
+    pivotColumns: ['last_opened_at'],
+  })
   declare organizations: ManyToMany<typeof Organization>
 
   async connectedAuthProvider(this: User) {
@@ -69,13 +71,15 @@ export default class User extends compose(BaseModel, AuthFinder) {
     await NotificationService.send(this, notification)
   }
 
-  projection() {
-    return UserPresenter.build(this)
+  projection(organizationSlug?: string) {
+    return UserPresenter.build(this, organizationSlug)
   }
 
   @afterFind()
   @afterFetch()
   static async loadOrganizations(user: User) {
-    await user.load('organizations')
+    await user.load('organizations', (query) => {
+      query.orderBy('last_opened_at', 'desc')
+    })
   }
 }

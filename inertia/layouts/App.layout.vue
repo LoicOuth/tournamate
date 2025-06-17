@@ -5,12 +5,18 @@ import UserMenu from '~/components/shared/menu/UserMenu.vue'
 import ThemeToggle from '~/components/shared/ThemeToggle.vue'
 import MainLayout from '~/layouts/Main.layout.vue'
 import Logo from '~/assets/images/logo.png'
-import { BuildingIcon, ChevronUp } from 'lucide-vue-next'
+import { BuildingIcon, ChevronUp, PlusIcon, SquareArrowDown } from 'lucide-vue-next'
 
 const { t } = useI18n()
 const { user } = useUser()
 
-const opened = ref(false)
+const opened = ref(true)
+
+const availableOrganizations = computed(() => {
+  return (
+    user.value?.organizations.filter((org) => org.id !== user.value?.currentOrganization?.id) || []
+  )
+})
 </script>
 
 <template>
@@ -29,15 +35,15 @@ const opened = ref(false)
             <SidebarGroupContent>
               <SidebarMenu>
                 <NavLink
-                  :href="`/org/${user?.firstOrganization?.slug}`"
+                  :href="`/org/${user?.lastOrganizationAccessed?.slug}`"
                   icon="LayoutDashboard"
-                  text="Tableau de bord"
+                  :text="t('appLayout.dashboard')"
                 />
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
           <SidebarGroup>
-            <SidebarGroupLabel>Tournois</SidebarGroupLabel>
+            <SidebarGroupLabel>{{ t('appLayout.tournaments') }}</SidebarGroupLabel>
           </SidebarGroup>
         </SidebarContent>
 
@@ -46,14 +52,25 @@ const opened = ref(false)
             <SidebarMenuItem>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <SidebarMenuButton>
+                  <SidebarMenuButton class="cursor-pointer">
                     <BuildingIcon />
-                    Current Organization
+                    {{ user?.currentOrganization?.name }}
                     <ChevronUp class="ml-auto" />
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent side="top" class="w-[--reka-popper-anchor-width]">
-                  <!-- organizations -->
+                <DropdownMenuContent side="top" class="w-60">
+                  <DropdownMenuItem>
+                    <PlusIcon class="size-5" />
+                    <span class="ml-2">{{ t('appLayout.createOrganization') }}</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <SquareArrowDown class="size-5" />
+                    <span class="ml-2">{{ t('appLayout.joinOrganization') }}</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator v-if="availableOrganizations.length" />
+                  <DropdownMenuItem v-for="org in availableOrganizations" :key="org.id">
+                    <span>{{ org.name }}</span>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>

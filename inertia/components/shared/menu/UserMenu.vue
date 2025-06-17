@@ -42,7 +42,7 @@ const handleLogout = () => {
         </Link>
       </DropdownMenuItem>
       <DropdownMenuItem v-else as-child>
-        <Link :href="`/org/${user?.firstOrganization?.slug}`">
+        <Link :href="`/org/${user?.lastOrganizationAccessed?.slug}`">
           <LayoutDashboardIcon class="mr-2" />
           {{ t('userMenu.dashboard') }}
         </Link>

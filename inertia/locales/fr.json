@@ -211,5 +211,11 @@
       "organization_name_help": "Ceci sera visible par tous les membres et participants",
       "submit_button": "Créer l'Organisation"
     }
+  },
+  "appLayout": {
+    "dashboard": "Tableau de bord",
+    "tournaments": "Tournois",
+    "createOrganization": "Créer une organisation",
+    "joinOrganization": "Rejoindre une organisation"
   }
 }
