@@ -1,28 +1,13 @@
 <script lang="ts" setup>
 import { ArrowLeft, ArrowRight, Building2, Users } from 'lucide-vue-next'
 import Logo from '~/assets/images/logo.png'
+import CreateOrganizationForm from '~/components/organization/CreateOrganizationForm.vue'
+import JoinOrganizationForm from '~/components/organization/JoinOrganizationForm.vue'
 
 const currentStep = ref<'selection' | 'join' | 'create'>('selection')
 
-const joinOrganizationFormData = useForm({
-  slug: '',
-})
-const createOrganizationFormData = useForm({
-  name: '',
-})
-
 const goBack = () => {
   currentStep.value = 'selection'
-  joinOrganizationFormData.reset()
-  createOrganizationFormData.reset()
-}
-
-const handleJoinNext = () => {
-  joinOrganizationFormData.post('/org/join')
-}
-
-const handleCreateNext = () => {
-  createOrganizationFormData.post('/org/create')
 }
 </script>
 
@@ -144,44 +129,8 @@ const handleCreateNext = () => {
                 {{ $t('onboarding.join_step.subtitle') }}
               </CardDescription>
             </CardHeader>
-            <CardContent class="space-y-6">
-              <div class="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                <h3 class="font-medium text-primary mb-2">
-                  {{ $t('onboarding.join_step.how_to_join.title') }}
-                </h3>
-                <p class="text-sm text-primary/80">
-                  {{ $t('onboarding.join_step.how_to_join.description') }}
-                </p>
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <Label for="org-id" class="text-sm font-medium">
-                  {{ $t('onboarding.join_step.organization_id_label') }}
-                </Label>
-                <Input
-                  id="org-id"
-                  v-model="joinOrganizationFormData.slug"
-                  :placeholder="$t('onboarding.join_step.organization_id_placeholder')"
-                  class="w-full"
-                  required
-                />
-                <span v-if="joinOrganizationFormData.errors.slug" class="text-red-500 text-xs">
-                  {{ joinOrganizationFormData.errors.slug }}
-                </span>
-                <p v-else class="text-xs text-muted-foreground">
-                  {{ $t('onboarding.join_step.organization_id_help') }}
-                </p>
-              </div>
-
-              <Button
-                class="w-full"
-                @click="handleJoinNext()"
-                :disabled="!joinOrganizationFormData.slug.trim()"
-                :loading="joinOrganizationFormData.processing"
-              >
-                {{ $t('onboarding.join_step.submit_button') }}
-                <ArrowRight class="w-4 h-4 ml-2" />
-              </Button>
+            <CardContent>
+              <JoinOrganizationForm />
             </CardContent>
           </Card>
         </div>
@@ -207,43 +156,8 @@ const handleCreateNext = () => {
                 {{ $t('onboarding.create_step.subtitle') }}
               </CardDescription>
             </CardHeader>
-            <CardContent class="space-y-6">
-              <div class="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                <h3 class="font-medium text-primary mb-2">
-                  {{ $t('onboarding.create_step.how_to_create.title') }}
-                </h3>
-                <p class="text-sm text-primary/80">
-                  {{ $t('onboarding.create_step.how_to_create.description') }}
-                </p>
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <Label for="org-name" class="text-sm font-medium">
-                  {{ $t('onboarding.create_step.organization_name_label') }}
-                </Label>
-                <Input
-                  id="org-name"
-                  v-model="createOrganizationFormData.name"
-                  :placeholder="$t('onboarding.create_step.organization_name_placeholder')"
-                  class="w-full"
-                />
-                <span v-if="createOrganizationFormData.errors.name" class="text-red-500 text-xs">
-                  {{ createOrganizationFormData.errors.name }}
-                </span>
-                <p v-else class="text-xs text-muted-foreground">
-                  {{ $t('onboarding.create_step.organization_name_help') }}
-                </p>
-              </div>
-
-              <Button
-                class="w-full"
-                @click="handleCreateNext()"
-                :disabled="!createOrganizationFormData.name.trim()"
-                :loading="createOrganizationFormData.processing"
-              >
-                {{ $t('onboarding.create_step.submit_button') }}
-                <ArrowRight class="w-4 h-4 ml-2" />
-              </Button>
+            <CardContent>
+              <CreateOrganizationForm />
             </CardContent>
           </Card>
         </div>

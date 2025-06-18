@@ -6,11 +6,15 @@ import ThemeToggle from '~/components/shared/ThemeToggle.vue'
 import MainLayout from '~/layouts/Main.layout.vue'
 import Logo from '~/assets/images/logo.png'
 import { BuildingIcon, ChevronUp, PlusIcon, SquareArrowDown } from 'lucide-vue-next'
+import CreateOrganizationForm from '~/components/organization/CreateOrganizationForm.vue'
+import JoinOrganizationForm from '~/components/organization/JoinOrganizationForm.vue'
 
 const { t } = useI18n()
 const { user } = useUser()
 
 const opened = ref(true)
+const isCreateOrganizationModalDisplayed = ref(false)
+const isJoinOrganizationModalDisplayed = ref(false)
 
 const availableOrganizations = computed(() => {
   return (
@@ -50,7 +54,7 @@ const availableOrganizations = computed(() => {
         <SidebarFooter>
           <SidebarMenu>
             <SidebarMenuItem>
-              <DropdownMenu>
+              <DropdownMenu :modal="false">
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuButton class="cursor-pointer">
                     <BuildingIcon />
@@ -59,16 +63,20 @@ const availableOrganizations = computed(() => {
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="top" class="w-60">
-                  <DropdownMenuItem>
+                  <DropdownMenuItem @click="isCreateOrganizationModalDisplayed = true">
                     <PlusIcon class="size-5" />
                     <span class="ml-2">{{ t('appLayout.createOrganization') }}</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  <DropdownMenuItem @click="isJoinOrganizationModalDisplayed = true">
                     <SquareArrowDown class="size-5" />
                     <span class="ml-2">{{ t('appLayout.joinOrganization') }}</span>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator v-if="availableOrganizations.length" />
-                  <DropdownMenuItem v-for="org in availableOrganizations" :key="org.id">
+                  <DropdownMenuItem
+                    v-for="org in availableOrganizations"
+                    :key="org.id"
+                    @click="router.get(`/org/${org.slug}`)"
+                  >
                     <span>{{ org.name }}</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -86,10 +94,27 @@ const availableOrganizations = computed(() => {
             <UserMenu :from-dashboard="true" />
           </div>
         </header>
-        <main class="flex-1 p-5">
+        <main class="flex-1 p-6">
           <slot />
         </main>
       </div>
     </SidebarProvider>
+
+    <Dialog v-model:open="isCreateOrganizationModalDisplayed">
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{{ t('appLayout.createOrganization') }}</DialogTitle>
+        </DialogHeader>
+        <CreateOrganizationForm @close="isCreateOrganizationModalDisplayed = false" />
+      </DialogContent>
+    </Dialog>
+    <Dialog v-model:open="isJoinOrganizationModalDisplayed">
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>{{ t('appLayout.joinOrganization') }}</DialogTitle>
+        </DialogHeader>
+        <JoinOrganizationForm @close="isJoinOrganizationModalDisplayed = false" />
+      </DialogContent>
+    </Dialog>
   </MainLayout>
 </template>

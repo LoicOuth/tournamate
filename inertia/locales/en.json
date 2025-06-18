@@ -186,36 +186,44 @@
       "description": "Ideal if you're starting new or want to be the administrator of your own tournaments.",
       "button": "Create New Organization"
     },
-    "back_button": "Back",
-    "join_step": {
-      "title": "Join Organization",
-      "subtitle": "Enter the organization details provided by your administrator",
-      "how_to_join": {
-        "title": "How to Join",
-        "description": "Contact your organization administrator to get the organization identification code. This unique code will allow you to join their organization and access all tournaments and events they manage."
-      },
-      "organization_id_label": "Organization ID",
-      "organization_id_placeholder": "Enter organization identification code",
-      "organization_id_help": "Ask your administrator for this unique identification code",
-      "submit_button": "Join Organization"
-    },
-    "create_step": {
-      "title": "Create Organization",
-      "subtitle": "Set up your new tournament organization",
-      "how_to_create": {
-        "title": "How to Create",
-        "description": "Creating an organization makes you the administrator. You'll be able to create tournaments, invite other users, and manage all aspects of your competitive events. Choose a name that represents your group, team, or company."
-      },
-      "organization_name_label": "Organization Name",
-      "organization_name_placeholder": "Enter your organization name",
-      "organization_name_help": "This will be visible to all members and participants",
-      "submit_button": "Create Organization"
-    }
+    "back_button": "Back"
   },
   "appLayout": {
     "dashboard": "Dashboard",
     "tournaments": "Tournaments",
     "createOrganization": "Create Organization",
     "joinOrganization": "Join Organization"
+  },
+  "createOrganizationForm": {
+    "title": "Create Organization",
+    "subtitle": "Set up your new tournament organization",
+    "how_to_create": {
+      "title": "How to Create",
+      "description": "Creating an organization makes you the administrator. You'll be able to create tournaments, invite other users, and manage all aspects of your competitive events. Choose a name that represents your group, team, or company."
+    },
+    "organization_name_label": "Organization Name",
+    "organization_name_placeholder": "Enter your organization name",
+    "organization_name_help": "This will be visible to all members and participants",
+    "submit_button": "Create Organization"
+  },
+  "joinOrganizationForm": {
+    "title": "Join Organization",
+    "subtitle": "Enter the organization details provided by your administrator",
+    "how_to_join": {
+      "title": "How to Join",
+      "description": "Contact your organization administrator to get the organization identification code. This unique code will allow you to join their organization and access all tournaments and events they manage."
+    },
+    "organization_id_label": "Organization ID",
+    "organization_id_placeholder": "Enter organization identification code",
+    "organization_id_help": "Ask your administrator for this unique identification code",
+    "submit_button": "Join Organization"
+  },
+  "dashboardPage": {
+    "title": "Dashboard",
+    "welcome": "Welcome",
+    "manageTournaments": "Manage your tournaments for",
+    "createTournament": "Create a new tournament",
+    "copy": "Copy !",
+    "copyId": "Copy Organization ID"
   }
 }

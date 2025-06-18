@@ -23,8 +23,6 @@ export default class CreateOrgnanizationController {
     auth.user.onboardingStep = 1
     await auth.user.save()
 
-    return response
-      .redirect()
-      .toRoute('dashboard.index', { organizationSlug: auth.user.organizations[0]?.slug })
+    return response.redirect().toRoute('dashboard.index', { organizationSlug: organization.slug })
   }
 }

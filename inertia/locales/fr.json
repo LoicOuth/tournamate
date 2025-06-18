@@ -186,36 +186,36 @@
       "description": "Idéal si vous commencez ou si vous voulez être l'administrateur de vos propres tournois.",
       "button": "Créer une Nouvelle Organisation"
     },
-    "back_button": "Retour",
-    "join_step": {
-      "title": "Rejoindre une Organisation",
-      "subtitle": "Saisissez les détails de l'organisation fournis par votre administrateur",
-      "how_to_join": {
-        "title": "Comment Rejoindre",
-        "description": "Contactez l'administrateur de votre organisation pour obtenir le code d'identification de l'organisation. Ce code unique vous permettra de rejoindre leur organisation et d'accéder à tous les tournois et événements qu'ils gèrent."
-      },
-      "organization_id_label": "ID de l'Organisation",
-      "organization_id_placeholder": "Saisissez le code d'identification de l'organisation",
-      "organization_id_help": "Demandez ce code d'identification unique à votre administrateur",
-      "submit_button": "Rejoindre l'Organisation"
-    },
-    "create_step": {
-      "title": "Créer une Organisation",
-      "subtitle": "Configurez votre nouvelle organisation de tournois",
-      "how_to_create": {
-        "title": "Comment Créer",
-        "description": "Créer une organisation fait de vous l'administrateur. Vous pourrez créer des tournois, inviter d'autres utilisateurs et gérer tous les aspects de vos événements compétitifs. Choisissez un nom qui représente votre groupe, votre équipe ou votre entreprise."
-      },
-      "organization_name_label": "Nom de l'Organisation",
-      "organization_name_placeholder": "Saisissez le nom de votre organisation",
-      "organization_name_help": "Ceci sera visible par tous les membres et participants",
-      "submit_button": "Créer l'Organisation"
-    }
+    "back_button": "Retour"
   },
   "appLayout": {
     "dashboard": "Tableau de bord",
     "tournaments": "Tournois",
     "createOrganization": "Créer une organisation",
     "joinOrganization": "Rejoindre une organisation"
+  },
+  "createOrganizationForm": {
+    "title": "Créer une Organisation",
+    "subtitle": "Configurez votre nouvelle organisation de tournois",
+    "how_to_create": {
+      "title": "Comment créer",
+      "description": "Créer une organisation fait de vous l'administrateur. Vous pourrez créer des tournois, inviter d'autres utilisateurs et gérer tous les aspects de vos événements compétitifs. Choisissez un nom qui représente votre groupe, équipe ou entreprise."
+    },
+    "organization_name_label": "Nom de l'Organisation",
+    "organization_name_placeholder": "Entrez le nom de votre organisation",
+    "organization_name_help": "Ce nom sera visible pour tous les membres et participants",
+    "submit_button": "Créer l'Organisation"
+  },
+  "joinOrganizationForm": {
+    "title": "Rejoindre une Organisation",
+    "subtitle": "Entrez les détails de l'organisation fournis par votre administrateur",
+    "how_to_join": {
+      "title": "Comment rejoindre",
+      "description": "Contactez l'administrateur de l'organisation pour obtenir le code d'identification de l'organisation. Ce code unique vous permettra de rejoindre leur organisation et d'accéder à tous les tournois et événements qu'ils gèrent."
+    },
+    "organization_id_label": "ID de l'Organisation",
+    "organization_id_placeholder": "Entrez le code d'identification de l'organisation",
+    "organization_id_help": "Demandez ce code d'identification unique à votre administrateur",
+    "submit_button": "Rejoindre l'Organisation"
   }
 }

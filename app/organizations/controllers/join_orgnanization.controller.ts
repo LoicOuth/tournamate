@@ -16,6 +16,10 @@ export default class JoinOrgnanizationController {
 
     const organization = await Organization.findByOrFail('slug', slug)
 
+    if (auth.user.organizations.some((org) => org.id === organization.id)) {
+      return response.redirect().toRoute('dashboard.index', { organizationSlug: organization.slug })
+    }
+
     await auth.user.related('organizations').attach([organization.id])
 
     auth.user.onboardingStep = 1
